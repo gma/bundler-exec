@@ -1,5 +1,5 @@
-README
-======
+bundler-bin
+===========
 
 bundler-bin provides a Bash function that updates your PATH environment
 variable to include a project's ./bin directory if the project's Ruby gem
