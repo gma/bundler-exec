@@ -53,7 +53,7 @@
 
 ## Variables
 
-PROJECT_ROOT="${PROJECT_ROOT:-HOME/src}"
+PROJECT_ROOT="${PROJECT_ROOT:-$HOME/src}"
 
 
 ## Functions
