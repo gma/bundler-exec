@@ -19,7 +19,7 @@
 #
 # 1. Copy bundler-bin.sh to ~/.bundler-bin.sh.
 # 2. Set PROJECT_ROOT to the parent directory of your bundled projects
-#    (e.g. ~/code). Why is this needed? See update_bundler_path below.
+#    (e.g. $HOME/code). Why is this needed? See update_bundler_path below.
 # 3. Source it from your ~/.bashrc file.
 #
 # For example:

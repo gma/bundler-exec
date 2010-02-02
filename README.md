@@ -28,7 +28,7 @@ Usage:
 For example:
 
     $ cp bundler-bin/bundler-bin.sh ~/.bundler-bin.sh
-    $ echo "PROJECT_ROOT=~/code" >> ~/.bashrc
+    $ echo "PROJECT_ROOT=$HOME/code" >> ~/.bashrc
     $ echo "[ -f ~/.bundler-bin.sh ] && source ~/.bundler-bin.sh" >> ~/.bashrc
 
 That's it... cd into a bundled project and try `echo $PATH` to see if
