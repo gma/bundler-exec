@@ -1,21 +1,37 @@
 #!/bin/bash
 
-COMMANDS="ruby rake"
+BUNDLED_COMMANDS="rake ruby spec"
+
+## Functions
 
 bundler-installed()
 {
-    which bundle > /dev/null
+    which bundle > /dev/null 2>&1
 }
 
-define-bundler-aliases()
+within-bundled-project()
 {
-    if bundler-installed; then
-        for command in $COMMANDS; do
-            if [ -e Gemfile ]; then
-                alias $command="bundle exec $command"
-            fi
-        done
+    local dir="$(pwd)"
+    while [ "$(dirname $dir)" != "/" ]; do
+        [ -f "$dir/Gemfile" ] && return
+        dir="$(dirname $dir)"
+    done
+    false
+}
+
+run-with-bundler()
+{
+    local command="$1"
+    shift
+    if bundler-installed && within-bundled-project; then
+        bundle exec $command $*
+    else
+        $command $*
     fi
 }
 
-PROMPT_COMMAND="define-bundler-aliases"
+## Main program
+
+for CMD in $BUNDLED_COMMANDS; do
+    alias $CMD="run-with-bundler $CMD"
+done
