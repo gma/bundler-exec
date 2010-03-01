@@ -1,4 +1,4 @@
-bundler-bin
+bundler-exec
 ===========
 
 bundler is a great way to manage the gem dependencies in your Ruby project.
@@ -14,21 +14,20 @@ so:
     $ bundle exec rake my:task
 
 It's something that you really ought to be doing whenever you run a ruby
-script within a bundled project, but, alas, it can become a chore. Let's be
-honest, it's a right pain in the rear.
+script within a bundled project, but, alas, it can become a chore.
 
-bundler-bin works out whether you should have typed "bundle exec" infront of
-common ruby commands and runs them for you.
+Enter bundler-exec, which takes care of automatically pre-pending "bundle
+exec" to the beginning of common Ruby commands.
 
 ## Usage
 
- 1. Copy bundler-bin.sh to ~/.bundler-bin.sh.
+ 1. Copy bundler-exec.sh to ~/.bundler-exec.sh.
  2. Source it from your ~/.bashrc file.
 
 For example:
 
-    $ cp bundler-bin/bundler-bin.sh ~/.bundler-bin.sh
-    $ echo "[ -f ~/.bundler-bin.sh ] && source ~/.bundler-bin.sh" >> ~/.bashrc
+    $ cp bundler-exec/bundler-exec.sh ~/.bundler-exec.sh
+    $ echo "[ -f ~/.bundler-exec.sh ] && source ~/.bundler-exec.sh" >> ~/.bashrc
 
 Er, that's it...
 
@@ -36,4 +35,4 @@ You can get bundler by installing the gem:
 
     $ gem install bundler
 
-See http://github.com/carlhuda/bundler for more on bundler.
+See http://github.com/carlhuda/bundler for more about bundler.
