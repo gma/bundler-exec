@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUNDLED_COMMANDS="rake ruby spec"
+BUNDLED_COMMANDS="rackup rails rake ruby shotgun spec"
 
 ## Functions
 
@@ -13,6 +13,7 @@ within-bundled-project()
 {
     local dir="$(pwd)"
     while [ "$(dirname $dir)" != "/" ]; do
+        
         [ -f "$dir/Gemfile" ] && return
         dir="$(dirname $dir)"
     done
