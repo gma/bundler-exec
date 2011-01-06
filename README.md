@@ -19,7 +19,7 @@ script within a bundled project, but, alas, it can become a chore.
 Enter bundler-exec, which takes care of automatically pre-pending "bundle
 exec" to the beginning of common Ruby commands.
 
-## Usage
+## Installation
 
  1. Copy bundler-exec.sh to ~/.bundler-exec.sh.
  2. Source it from your ~/.bashrc file.
@@ -36,3 +36,22 @@ You can get bundler by installing the gem:
     $ gem install bundler
 
 See http://github.com/carlhuda/bundler for more about bundler.
+
+## Usage
+
+To check that bundler-exec has been installed properly, use the `type`
+shell built-in command to see what it will do when you run `ruby`. It
+should tell you it's an alias, like this:
+
+    $ type ruby
+    ruby is aliased to `run-with-bundler ruby'
+
+If so, whenever you run `ruby` (or any of the other commands listed in
+the `BUNDLED_COMMANDS` variable) you'll actually be running them with
+`bundle exec`.
+
+If you want to run one of these commands without `bundler exec` you can
+use `which` to find the full path to executable and then run it, like
+this:
+
+    $ $(which ruby) -e 'puts "hello"'
