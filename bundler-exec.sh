@@ -2,6 +2,12 @@
 
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-cucumber heroku rackup rails rake rspec ruby shotgun spec spork}"
 
+# make it work in ZSH
+# dirty but works
+if [ `echo $0 | grep zsh` ]; then
+  setopt shwordsplit
+fi
+
 ## Functions
 
 bundler-installed()
