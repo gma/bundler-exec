@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-cucumber heroku rackup rails rake rspec ruby shotgun spec spork thin}"
+BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-cucumber heroku rackup rails rake rspec ruby shotgun spec spork thin unicorn_rails}"
 
 ## Functions
 
