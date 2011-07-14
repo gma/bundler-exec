@@ -21,12 +21,10 @@ within-bundled-project()
 
 run-with-bundler()
 {
-    local command="$1"
-    shift
     if bundler-installed && within-bundled-project; then
-        bundle exec $command "$@"
+        bundle exec $@
     else
-        $command "$@"
+        $@
     fi
 }
 
