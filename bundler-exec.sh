@@ -1,6 +1,33 @@
 #!/bin/bash
 
-BUNDLED_COMMANDS="cucumber rackup rails rake ruby shotgun spec rspec"
+BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
+cap
+capify
+cucumber
+foreman
+haml
+heroku
+html2haml
+guard
+rackup
+rails
+rake
+rake2thor
+rspec
+ruby
+sass
+sass-convert
+serve
+shotgun
+spec
+spork
+thin
+thor
+tilt
+tt
+unicorn
+unicorn_rails
+}"
 
 ## Functions
 
@@ -21,12 +48,10 @@ within-bundled-project()
 
 run-with-bundler()
 {
-    local command="$1"
-    shift
     if bundler-installed && within-bundled-project; then
-        bundle exec $command "$@"
+        bundle exec $@
     else
-        $command "$@"
+        $@
     fi
 }
 
