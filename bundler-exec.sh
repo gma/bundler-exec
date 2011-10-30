@@ -5,10 +5,10 @@ cap
 capify
 cucumber
 foreman
+guard
 haml
 heroku
 html2haml
-guard
 rackup
 rails
 rake
@@ -24,8 +24,8 @@ spork
 thin
 thor
 tilt
-turn
 tt
+turn
 unicorn
 unicorn_rails
 }"
