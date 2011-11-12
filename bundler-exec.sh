@@ -1,5 +1,15 @@
 #!/bin/bash
 
+rbenv-installed()
+{
+  which rbenv > /dev/null 2>&1
+}
+
+
+if rbenv-installed; then
+  BUNDLED_COMMANDS=$(ls ~/.rbenv/shims)
+else
+
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
 cap
 capify
@@ -30,11 +40,17 @@ unicorn
 unicorn_rails
 }"
 
+fi
+
 ## Functions
 
 bundler-installed()
 {
+  if rbenv-installed; then
+    rbenv which bundle > /dev/null 2>&1
+  else
     which bundle > /dev/null 2>&1
+  fi
 }
 
 within-bundled-project()
