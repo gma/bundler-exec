@@ -75,7 +75,7 @@ run-with-bundler()
 ## Main program
 
 for CMD in $BUNDLED_COMMANDS; do
-  if [[ $CMD != 'bundle' ]]; then
+  if [[ $CMD != 'bundle' && $CMD != 'gem' ]]; then
     alias $CMD="run-with-bundler $CMD"
   fi
 done
