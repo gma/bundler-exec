@@ -38,7 +38,7 @@ run-with-bundler()
 ## Main program
 
 if rbenv-installed; then
-    BUNDLED_COMMANDS=$(ls ~/.rbenv/shims)
+    BUNDLED_COMMANDS=$(/bin/ls ~/.rbenv/shims)
 else
     BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
 cap
