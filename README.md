@@ -47,7 +47,7 @@ should tell you it's an alias, like this:
     ruby is aliased to `run-with-bundler ruby'
 
 If so, whenever you run `ruby` (or any of the other commands listed in
-the `BUNDLED_COMMANDS` variable) you'll actually be running them with
+the `BUNDLED_COMMANDS` variable) you'll actually be running it with
 `bundle exec`.
 
 If you want to run one of these commands without `bundler exec` you can
@@ -58,8 +58,11 @@ this:
 
 ## rbenv Integration
 
-If you have [rbenv][rbenv] installed, bundler-exec will hook itself up
-to all your rbenv shims without any intervention. If a rehash creates a
-new shim, you'll need to reload bundler-exec.
+If you have [rbenv][] installed, bundler-exec will hook itself up
+to all your rbenv shims without any intervention. If running `rbenv
+rehash` creates a new shim file, you'll need to reload bundler-exec,
+like so:
 
     $ source ~/.bundler-exec.sh
+
+[rbenv]: https://github.com/sstephenson/rbenv
