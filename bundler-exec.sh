@@ -29,9 +29,9 @@ within-bundled-project()
 run-with-bundler()
 {
     if bundler-installed && within-bundled-project; then
-        bundle exec $@
+        bundle exec "$@"
     else
-        $@
+        "$@"
     fi
 }
 
