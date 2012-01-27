@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Automatically run Ruby scripts with "bundle exec" (but only when appropriate).
+# http://effectif.com/ruby/automating-bundle-exec
+# Github: https://github.com/gma/bundler-exec
+
 ## Functions
 
 rbenv-installed()
