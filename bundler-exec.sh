@@ -41,6 +41,7 @@ guard
 haml
 heroku
 html2haml
+irb
 rackup
 rails
 rake
