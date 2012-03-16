@@ -55,14 +55,3 @@ use `which` to find the full path to executable and then run it, like
 this:
 
     $ $(which ruby) -e 'puts "hello"'
-
-## rbenv Integration
-
-If you have [rbenv][] installed, bundler-exec will hook itself up
-to all your rbenv shims without any intervention. If running `rbenv
-rehash` creates a new shim file, you'll need to reload bundler-exec,
-like so:
-
-    $ source ~/.bundler-exec.sh
-
-[rbenv]: https://github.com/sstephenson/rbenv

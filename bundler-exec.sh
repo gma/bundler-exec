@@ -6,18 +6,9 @@
 
 ## Functions
 
-rbenv-installed()
-{
-    which rbenv > /dev/null 2>&1
-}
-
 bundler-installed()
 {
-    if rbenv-installed; then
-        rbenv which bundle > /dev/null 2>&1
-    else
-        which bundle > /dev/null 2>&1
-    fi
+    which bundle > /dev/null 2>&1
 }
 
 within-bundled-project()
@@ -41,10 +32,7 @@ run-with-bundler()
 
 ## Main program
 
-if rbenv-installed; then
-    BUNDLED_COMMANDS=$(/bin/ls ~/.rbenv/shims)
-else
-    BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
+BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
 cap
 capify
 cucumber
@@ -73,7 +61,6 @@ turn
 unicorn
 unicorn_rails
 }"
-fi
 
 for CMD in $BUNDLED_COMMANDS; do
     if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
