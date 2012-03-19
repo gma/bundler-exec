@@ -41,6 +41,7 @@ guard
 haml
 heroku
 html2haml
+jasmine
 rackup
 rails
 rake
