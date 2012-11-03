@@ -47,7 +47,6 @@ heroku
 html2haml
 jasmine
 rackup
-rails
 rake
 rake2thor
 rspec
