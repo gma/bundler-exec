@@ -42,6 +42,7 @@ haml
 heroku
 html2haml
 jasmine
+librarian-chef
 rackup
 rake
 rake2thor
