@@ -33,6 +33,7 @@ run-with-bundler()
 ## Main program
 
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
+berks
 cap
 capify
 chefspec
@@ -46,9 +47,11 @@ foreman
 guard
 haml
 html2haml
+irb
 jasmine
 kitchen
 knife
+pry
 rackup
 rake
 rake2thor
