@@ -33,14 +33,24 @@ run-with-bundler()
 ## Main program
 
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
+berks
 cap
 capify
+chefspec
+chef-apply
+chef-client
+chef-shell
+chef-solo
 cucumber
+foodcritic
 foreman
 guard
 haml
 html2haml
 jasmine
+kitchen
+knife
+pry
 rackup
 rake
 rake2thor
@@ -52,6 +62,7 @@ serve
 shotgun
 spec
 spork
+strainer
 thin
 thor
 tilt
