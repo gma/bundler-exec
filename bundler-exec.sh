@@ -47,6 +47,7 @@ foreman
 guard
 haml
 html2haml
+irb
 jasmine
 kitchen
 knife
