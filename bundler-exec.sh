@@ -50,6 +50,7 @@ html2haml
 jasmine
 kitchen
 knife
+middleman
 pry
 rackup
 rake
