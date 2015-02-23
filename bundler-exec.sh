@@ -33,7 +33,6 @@ run-with-bundler()
 ## Main program
 
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
-berks
 cap
 capify
 chefspec
