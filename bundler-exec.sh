@@ -47,6 +47,7 @@ guard
 haml
 html2haml
 jasmine
+jekyll
 kitchen
 knife
 middleman
