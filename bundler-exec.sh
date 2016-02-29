@@ -35,6 +35,7 @@ run-with-bundler()
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
 cap
 capify
+chef
 chefspec
 chef-apply
 chef-client
