@@ -72,6 +72,7 @@ tt
 turn
 unicorn
 unicorn_rails
+wagon
 }"
 
 for CMD in $BUNDLED_COMMANDS; do
