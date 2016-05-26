@@ -75,8 +75,23 @@ unicorn_rails
 wagon
 }"
 
-for CMD in $BUNDLED_COMMANDS; do
-    if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
-        alias $CMD="run-with-bundler $CMD"
+__bundler_exec_set_aliases() {
+    local CMD
+
+    if [ "$ZSH_VERSION" ]; then
+        # zsh shell
+        # it doesn't iterate on strings the same as Bourne shells by default
+        # we need to set an option for that, and to avoid clobbering the whole
+        # environment, we sandbox that inside this function
+        setopt localoptions shwordsplit
     fi
-done
+
+    for CMD in $BUNDLED_COMMANDS; do
+        if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
+            alias $CMD="run-with-bundler $CMD"
+        fi
+    done
+}
+
+__bundler_exec_set_aliases
+unset -f __bundler_exec_set_aliases
