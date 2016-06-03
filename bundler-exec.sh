@@ -30,6 +30,21 @@ run-with-bundler()
     fi
 }
 
+define-bundler-aliases()
+{
+    # Allow zsh to iterate over list of words
+    [ -n "$ZSH_VERSION" ] && setopt localoptions shwordsplit
+
+    local command
+
+    for command in $BUNDLED_COMMANDS; do
+        if [[ $command != "bundle" && $command != "gem" ]]; then
+            alias $command="run-with-bundler $command"
+        fi
+    done
+}
+
+
 ## Main program
 
 BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
@@ -75,10 +90,6 @@ unicorn_rails
 wagon
 }"
 
-for CMD in $BUNDLED_COMMANDS; do
-    if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
-        alias $CMD="run-with-bundler $CMD"
-    fi
-done
+define-bundler-aliases
 
-unset CMD
+unset -f define-bundler-aliases
