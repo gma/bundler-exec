@@ -58,7 +58,6 @@ chef-shell
 chef-solo
 cucumber
 foodcritic
-foreman
 guard
 haml
 html2haml
