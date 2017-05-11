@@ -77,6 +77,7 @@ sass
 sass-convert
 serve
 shotgun
+sidekiq
 spec
 spork
 strainer
