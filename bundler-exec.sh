@@ -68,7 +68,6 @@ knife
 middleman
 pry
 rackup
-rails
 rake
 rake2thor
 rspec
