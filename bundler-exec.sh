@@ -4,6 +4,12 @@
 # http://effectif.com/ruby/automating-bundle-exec
 # Github: https://github.com/gma/bundler-exec
 
+# make it work in ZSH
+# dirty but works
+if [ `echo $0 | grep zsh` ]; then
+  setopt shwordsplit
+fi
+
 ## Functions
 
 bundler-installed()
