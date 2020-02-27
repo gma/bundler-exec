@@ -13,7 +13,7 @@ bundler-installed()
 
 within-bundled-project()
 {
-    local dir="$(pwd)"
+    local dir="$PWD"
     while [ "$dir" != "/" ]; do
         if [ -f "$dir/Gemfile" ]; then
             return 0
