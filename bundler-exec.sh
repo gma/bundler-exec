@@ -6,11 +6,6 @@
 
 ## Functions
 
-bundler-installed()
-{
-    which bundle > /dev/null 2>&1
-}
-
 within-bundled-project()
 {
     local dir="$(pwd)"
@@ -23,7 +18,7 @@ within-bundled-project()
 
 run-with-bundler()
 {
-    if bundler-installed && within-bundled-project; then
+    if within-bundled-project; then
         bundle exec "$@"
     else
         "$@"
