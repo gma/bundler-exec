@@ -14,11 +14,13 @@ bundler-installed()
 within-bundled-project()
 {
     local dir="$(pwd)"
-    while [ "$(dirname $dir)" != "/" ]; do
-        [ -f "$dir/Gemfile" ] && return
+    while [ "$dir" != "/" ]; do
+        if [ -f "$dir/Gemfile" ]; then
+            return 0
+        fi
         dir="$(dirname $dir)"
     done
-    false
+    return 1
 }
 
 run-with-bundler()
